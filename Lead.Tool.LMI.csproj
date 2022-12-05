@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35457950-2A67-448C-9F44-10D9794FE7B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lead.Tool.LMI</RootNamespace>
+    <AssemblyName>Lead.Tool.LMI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Bin\MyTools\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GoSdkNet, Version=1.0.7388.22167, Culture=neutral, PublicKeyToken=3e18828f1dab5c8c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Main\Lead.Main\obj\Debug\GoSdkNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="kApiNet, Version=1.0.7306.21609, Culture=neutral, PublicKeyToken=aed51b4e56ae495f, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Main\Lead.Main\obj\Debug\kApiNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="ConfigUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConfigUI.Designer.cs">
+      <DependentUpon>ConfigUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebugUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DebugUI.Designer.cs">
+      <DependentUpon>DebugUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LMICreat.cs" />
+    <Compile Include="LMITool.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lead.Tool.CommonData_3D\Lead.Tool.CommonData_3D.csproj">
+      <Project>{63329d03-9531-49a9-958a-5e8e2f2dbe4a}</Project>
+      <Name>Lead.Tool.CommonData_3D</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Lead.Tool.InterFace\Lead.Tool.Interface.csproj">
+      <Project>{a80d6846-5736-445f-8962-ef36cecc6790}</Project>
+      <Name>Lead.Tool.Interface</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Lead.Tool.Logger\Lead.Tool.Log.csproj">
+      <Project>{f2580e70-8934-4e88-aec2-ce4e540c3eeb}</Project>
+      <Name>Lead.Tool.Log</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Lead.Tool.Resources\Lead.Tool.Resources.csproj">
+      <Project>{6ec227e6-eaef-4454-9b7f-532f921c6f05}</Project>
+      <Name>Lead.Tool.Resources</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Lead.Tool.XML\Lead.Tool.XML.csproj">
+      <Project>{e5f3fa75-5129-4315-9558-e3ccdca3c17b}</Project>
+      <Name>Lead.Tool.XML</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ConfigUI.resx">
+      <DependentUpon>ConfigUI.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
